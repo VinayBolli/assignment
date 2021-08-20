@@ -1,0 +1,45 @@
+<div class="container">
+  <legend class="text-center">----------You can change your status by doing dropdown----------</legend><br>
+
+  <div class="row">
+      <div class=" col-lg-4">
+        <h2 class="tab text-center ">List In Open</h2>
+
+        <div
+          cdkDropList
+          #openList="cdkDropList"
+          [cdkDropListData]="open"
+          class="example-list"
+          [cdkDropListConnectedTo]="[in_progressList,completedList]"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box tab" *ngFor="let item of open" cdkDrag [cdkDragData]="item">{{item.title}}</div>
+        </div>
+        </div>
+      <div class=" col-lg-4">
+        <h2 class="tab text-center ">List In-Progress</h2>
+
+        <div
+          cdkDropList
+          #in_progressList="cdkDropList"
+          [cdkDropListData]="in_progress"
+          [cdkDropListConnectedTo]="[openList, completedList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box tab" *ngFor="let item of in_progress" cdkDrag [cdkDragData]="item">{{item.title}}</div>
+        </div>
+      </div>
+      <div class="  col-lg-4">
+        <h2 class="tab text-center" >List In Completed </h2>
+
+        <div
+          cdkDropList
+          #completedList="cdkDropList"
+          [cdkDropListData]="completed"
+          [cdkDropListConnectedTo]="[openList, in_progressList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box tab" *ngFor="let item of completed" cdkDrag [cdkDragData]="item">{{item.title}}</div>
+        </div>
+        </div>
+    </div>
+</div>
