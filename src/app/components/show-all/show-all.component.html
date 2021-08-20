@@ -1,0 +1,25 @@
+
+<div class="container" style='background-color: rgb(250, 241, 241);'>
+  <legend class="text-center">----------Yours Entered Data----------</legend>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th class="tab text-center" scope="col">TITLE</th>
+          <th  class="tab text-center"scope="col">DESCRIPTION</th>
+          <th  class="tab text-center" scope="col">STATUS</th>
+          <th class="tab text-center" scope="col">DATE</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let task of tasks">
+        <tr class="tab text-center">
+          <td>{{task.title}}</td>
+          <td>{{task.description}}</td>
+          <td>{{task.status}}</td>
+          <td>{{task.date | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

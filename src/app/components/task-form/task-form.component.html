@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div class="row">
+    <form style='background-color: rgb(250, 241, 241);'>
+      <legend class="text-center">----------Enter Details Here----------</legend>
+      <div class="mb-3">
+        <label style="font-size: large;" for="exampleInputEmail1" class="form-label"><b>Enter title</b></label>
+        
+        <input type="text" name="title" placeholder="Enter title" [(ngModel)]="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label style="font-size: large;" for="exampleInputPassword1" class="form-label"><b>Enter Description</b> </label>
+        <input type="text" name="description" placeholder="Enter description" [(ngModel)]="description" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label style="font-size: large;" for="exampleInputEmail1" class="form-label"><b>Select your option</b></label>
+        <select (change)="parseValue($event.target.value)" class="form-select" aria-label="Default select example">
+          <option selected [value]="s" *ngFor="let s of options">{{s}}</option>
+        </select>
+      </div>
+      <button style="width: 100%;" (click)="handleAdd()" class="btn btn-dark">Submit</button>
+      
+    </form>
+</div>
+</div>
